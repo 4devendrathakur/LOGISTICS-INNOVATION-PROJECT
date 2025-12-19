@@ -1,99 +1,106 @@
-#  Predictive Delivery Optimizer – Logistics Innovation Challenge
-
-##  Project Overview
-
-The **Predictive Delivery Optimizer** is a data-driven logistics analytics and machine learning application built using **Python and Streamlit**. The goal of this project is to help logistics companies **predict delivery delays before they occur** and take proactive actions to improve delivery performance, reduce costs, and enhance customer satisfaction.
-
-This project was developed as part of a **Logistics Innovation Internship Case Study**.
+#  Predictive Delivery Optimizer  
+### Intelligent Logistics Delay Prediction System
 
 ---
 
-##  Business Problem
+##  Project Description
 
-Logistics companies often face:
+The **Predictive Delivery Optimizer** is a machine learning–powered logistics intelligence application that predicts whether a delivery is likely to be delayed **before dispatch**. The system uses historical logistics data and operational parameters to assist logistics teams in making proactive, data-driven decisions.
 
-* Late deliveries
-* High operational costs
-* Poor customer experience
-* Reactive decision-making
-
-Delays are usually identified **after** they occur. This project transforms operations from **reactive to predictive** by identifying **high-risk deliveries in advance**.
+This project was developed as part of a **Logistics Innovation Internship / Case Study Program**.
 
 ---
 
-##  Solution Approach
+##  Problem Context
 
-We built a **Predictive Delivery Risk System** that:
+Logistics organizations frequently encounter:
 
-* Analyzes real operational logistics data
-* Trains a machine learning model to predict delivery delays
-* Provides an interactive dashboard for decision-makers
-* Combines ML predictions with business logic for reliability
+- Unexpected shipment delays  
+- Rising transportation and labor expenses  
+- Poor delivery reliability  
+- Customer dissatisfaction  
 
----
-
-##  Dataset Overview
-
-The project uses **7 interconnected CSV datasets** covering the entire logistics ecosystem:
-
-| Dataset                    | Description                                                |
-| -------------------------- | ---------------------------------------------------------- |
-| `orders.csv`               | Order-level details (value, priority, origin, destination) |
-| `delivery_performance.csv` | Promised vs actual delivery times, status                  |
-| `routes_distance.csv`      | Distance, fuel, traffic, weather impact                    |
-| `cost_breakdown.csv`       | Fuel, labor, maintenance, overhead costs                   |
-| `vehicle_fleet.csv`        | Fleet capacity, fuel efficiency, emissions                 |
-| `warehouse_inventory.csv`  | Stock levels and warehouse data                            |
-| `customer_feedback.csv`    | Ratings and feedback text                                  |
-
-> Note: Some orders have missing data to simulate real-world scenarios.
+Traditional systems identify delays **after completion**, leaving no opportunity for preventive action. This project introduces a **predictive framework** that flags risky deliveries in advance.
 
 ---
 
-##  Tech Stack
+##  Solution Overview
 
-* **Python 3.9+**
-* **Pandas, NumPy** – Data processing
-* **Scikit-learn** – Machine Learning
-* **Streamlit** – Interactive web application
-* **Matplotlib / Plotly** – Visualizations
+The solution delivers a **Delivery Delay Risk Prediction Platform** that:
+
+- Aggregates logistics data from multiple sources  
+- Trains a supervised machine learning model  
+- Provides an interactive Streamlit-based dashboard  
+- Converts operational data into actionable insights  
+
+The approach shifts logistics operations from **reactive troubleshooting** to **proactive optimization**.
 
 ---
 
-##  Machine Learning Logic
+##  Dataset Summary
 
-* Problem Type: **Binary Classification** (Delay / No Delay)
-* Target Variable: `Delivery_Status`
-* Model: Random Forest / Logistic Regression (configurable)
-* Feature Engineering:
+The project uses **seven interconnected CSV datasets** representing end-to-end logistics operations:
 
-  * Distance
-  * Traffic Delay
-  * Fuel Consumption
-  * Delivery Cost
-  * Order Value
-  * Fuel Cost
-  * Labor Cost
-  * Priority Encoding
+| Dataset File | Description |
+|-------------|------------|
+| `orders.csv` | Order information such as value, priority, source, and destination |
+| `delivery_performance.csv` | Promised vs actual delivery timelines |
+| `routes_distance.csv` | Route distance, fuel usage, and traffic delays |
+| `cost_breakdown.csv` | Fuel, labor, and operational costs |
+| `vehicle_fleet.csv` | Vehicle capacity and fuel efficiency |
+| `warehouse_inventory.csv` | Inventory and warehouse-level data |
+| `customer_feedback.csv` | Customer ratings and feedback |
 
-A hybrid approach is used:
+> Missing values are intentionally included to simulate real-world logistics data challenges.
 
-* **ML prediction** for normal cases
-* **Rule-based override** for extreme risk scenarios
+---
+
+##  Technology Stack
+
+- **Python 3.9+**
+- **Pandas, NumPy** – Data preprocessing and analysis  
+- **Scikit-learn** – Machine learning modeling  
+- **Streamlit** – Interactive web application  
+- **Matplotlib / Plotly** – Data visualization  
+
+---
+
+##  Machine Learning Methodology
+
+- **Problem Type:** Binary Classification  
+- **Prediction Output:** Delay Risk (Yes / No)  
+- **Target Variable:** Delivery Delay Indicator  
+
+### Models Used
+- Random Forest Classifier (primary)
+- Logistic Regression (optional baseline)
+
+### Key Features
+- Distance traveled  
+- Traffic delay duration  
+- Fuel consumption  
+- Delivery cost  
+- Order value  
+- Fuel and labor expenses  
+- Priority encoding  
+
+A **hybrid strategy** is applied:
+- ML predictions for standard scenarios  
+- Rule-based overrides for extreme risk conditions  
 
 ---
 
 ##  Application Features
 
-* Interactive input controls (sliders, dropdowns)
-* Real-time delay risk prediction
-* Dynamic visualizations
-* Clear risk indicators:
-
-  *  Delivery On Track
-  *  High Risk of Delay
+- Sidebar-based interactive input controls  
+- Real-time delay risk prediction  
+- Visual overview of input parameters  
+- Clear decision indicators:
+  - 🟢 Delivery On Track  
+  - 🔴 High Risk of Delay  
 
 ---
+
 
 ##  Project Structure
 
@@ -116,80 +123,47 @@ logistics_innovation_project/
 │
 └── model/
     └── delay_model.pkl      # Trained ML model
-```
 
+```
 ---
 
 ##  How to Run the Project
 
 ###  Install Dependencies
 
-```bash
+bash
 pip install -r requirements.txt
-```
+
 
 ###  Train the Model (Optional)
 
-```bash
+bash
 python train_model.py
-```
+
 
 ###  Run the Streamlit App
 
-```bash
+bash
 streamlit run app.py
-```
+
 
 The app will be available at:
 
-```
+
 http://localhost:8501
-```
+
 
 ---
 
-##  Business Impact
-
-*  Potential **15–20% reduction in delivery delays**
-*  Lower operational and penalty costs
-*  Improved planning and dispatch decisions
-*  Higher customer satisfaction
-
----
-
-##  Future Enhancements
-
-* Delay probability (%) output
-* Feature importance / explainable AI
-* Route optimization suggestions
-* Sustainability & CO₂ tracking
-* Customer churn risk analysis
-
----
-
-##  Evaluation Alignment
-
-This project satisfies all mandatory requirements:
-
-*  Python & Streamlit
-*  Multi-dataset analysis
-*  Interactive dashboard
-*  Meaningful insights
-*  Clean, modular code
-
----
-
-##  Disclaimer
-
-This project was developed as part of an **internship case study** using provided datasets for educational and evaluation purposes.
-
----
 
 ##  Author
 
-**Jatin Kushwaha**
+**Devendra Thakur**
 Computer Science & Engineering (Data Science)
 
 ---
 
-⭐ If you like this project, feel free to star the repository!
+ If you like this project, feel free to star the repository!
+
+
+
